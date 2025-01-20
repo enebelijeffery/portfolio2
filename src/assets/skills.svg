@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; }
+    .category { font: bold 18px Arial; fill: #555; }
+    .skill { font: normal 16px Arial; fill: #777; }
+  </style>
+  <rect width="800" height="600" fill="#F9F9F9"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" class="title">Skills</text>
+  
+  <!-- Frontend Development -->
+  <text x="50" y="100" class="category">Frontend Development</text>
+  <text x="70" y="130" class="skill">HTML, CSS, JavaScript</text>
+  <text x="70" y="160" class="skill">React, Redux, Zustand</text>
+  <text x="70" y="190" class="skill">Material-UI (MUI)</text>
+  <text x="70" y="220" class="skill">Responsive Web Design</text>
+  
+  <!-- Backend Development -->
+  <text x="50" y="270" class="category">Backend Development</text>
+  <text x="70" y="300" class="skill">Node.js, Express</text>
+  <text x="70" y="330" class="skill">PostgreSQL</text>
+  <text x="70" y="360" class="skill">API Development & Integration</text>
+  
+  <!-- Web Scraping & Automation -->
+  <text x="50" y="410" class="category">Web Scraping & Automation</text>
+  <text x="70" y="440" class="skill">Python, Selenium</text>
+  <text x="70" y="470" class="skill">Data Extraction and Automation</text>
+  
+  <!-- Footer -->
+  <text x="50" y="550" class="skill">And more...</text>
+</svg>
