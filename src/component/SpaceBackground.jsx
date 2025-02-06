@@ -2,13 +2,8 @@ import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import starImg from "../assets/stars.jpg";
-import Header from "../component/Header";
-import Contact from "../component/Contact";
-import Footer from "../component/Footer";
-import Hero from "../component/Hero";
-import { div } from "framer-motion/client";
 
-const HomePage = () => {
+const SpaceBackground =()=>{
   const mountRef = useRef(null);
   const [contentLoaded, setContentLoaded] = useState(false);
 
@@ -20,9 +15,6 @@ const HomePage = () => {
       0.1,
       1000
     );
-    console.log(window.innerWidth, window.innerHeight)
-    console.log(mountRef.current.innerWidth)
-    console.log(mountRef.innerWidth / mountRef.innerHeight)
     camera.position.z = 1;
     camera.rotation.x = Math.PI / 2;
 
@@ -55,7 +47,7 @@ const HomePage = () => {
     let stars = new THREE.Points(starGeo, starMaterial);
     scene.add(stars);
 
-    let speed = 10;
+    let speed = 10; 
     let slowdownComplete = false;
 
     const animate = () => {
@@ -104,19 +96,11 @@ const HomePage = () => {
       renderer.dispose();
     };
   }, []);
-  return (
-    <div className="relative min-h-screen grid grid-row-3 w-full h-screen overflow-hidden">
-      <div ref={mountRef} className="absolute  top-0 min-h-screen left-0 w-full h-full -z-1"></div>
-      {contentLoaded && (
-        <div className="relative min-h-screen grid grid-row-3 ">
-          <Header />
-          <Hero />
-          <Footer />
-        </div>
-      )}
 
-    </div>
-  );
-};
+  return(
+    <div ref={mountRef} className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none"></div>
+  )
 
-export default HomePage;
+}
+
+export default SpaceBackground;

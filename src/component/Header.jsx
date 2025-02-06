@@ -25,11 +25,12 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
+    console.log('click')
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className={`py-4 text-white bg-gray-800 ${isScroll ? 'shadow-md' : ''}`}>
+    <header className={`py-4 bg-gradient-to-b from-gray-900 to-black text-blue-400 ${isScroll ? 'shadow-md' : ''}`}>
       <div className="container mt-5 mx-auto flex justify-between items-center px-6">
         <h1 className="text-2xl font-bold"><Link to={'/'}>Jeffery Enebeli</Link></h1>
         <div className="lg:hidden">

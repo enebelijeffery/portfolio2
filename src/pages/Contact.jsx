@@ -4,7 +4,7 @@ import Header from "../component/Header";
 
 const ContactPage=()=>{
     return(
-        <div className="min-h-screen grid grid-row-3">
+        <div className="relative min-h-screen grid grid-row-3">
             <Header/>
             <Contact/>
             <Footer/>

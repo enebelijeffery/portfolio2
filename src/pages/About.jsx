@@ -4,7 +4,7 @@ import Header from "../component/Header";
 
 const AboutPage=()=>{
     return(
-        <div className="min-h-screen grid grid-row-3">
+        <div className=" min-h-screen grid grid-row-3">
             <Header />
             <About />
             <Footer/>
@@ -12,3 +12,4 @@ const AboutPage=()=>{
     )
 }
 export default AboutPage;
+//bg-teal-900

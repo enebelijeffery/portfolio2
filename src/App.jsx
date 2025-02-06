@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
-import 'tailwindcss/tailwind.css';
+import * as THREE from "three";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import starImg from "./assets/stars.jpg";
+import { Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import {  Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 
 const Portfolio = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    const html = document.querySelector('html');
-    if (isDarkMode) {
-      html.setAttribute('data-theme', 'light');
-    } else {
-      html.setAttribute('data-theme', 'dark');
-    }
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen  bg-black w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

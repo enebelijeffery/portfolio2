@@ -15,12 +15,12 @@ const ProjectCard = ({ projectName, projectDiscription, projectLink = '#', proje
     animate={isInview&&{opacity:1,scale:1}}
     transition={{duration:1}}
     >
-      <div className=" shadow-md rounded-lg p-4 bg-gray-800">
+      <div className=" shadow-md rounded-lg p-4 bg-gray-900 ">
         <img src={productImage} alt="Project Thumbnail" className="rounded mb-4" />
         <h3 className="text-xl font-semibold">{projectName}</h3>
         <p className=" mb-4 text-white">{projectDiscription}</p>
         <h4 className="text-lg font-semibold mb-2">Technologies Used</h4>
-        <ul>
+        <ul className='grid grid-cols-3 gap-2'>
           {projectTech.map((tech, i) => {
             return (
               <li>{tech}</li>
@@ -81,7 +81,7 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
-      className="py-20 bg-gray-700 text-gray-100"
+      className="py-20  text-gray-100"
       // initial={{ opacity: 0 }}
       // whileInView={{ opacity: 1 }}
       // viewport={{ once: true }}
@@ -107,3 +107,4 @@ const Projects = () => {
 }
 
 export default Projects
+// bg-gray-700 

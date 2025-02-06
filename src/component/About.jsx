@@ -19,13 +19,50 @@ import supabase from '../assets/supabase.svg';
 import tailwind from '../assets/tailwind.svg';
 import typescript from '../assets/typescript.svg';
 import profile from '../assets/profile.webp';
-import skills from '../assets/skills.svg';
+// import skills from '../assets/skills.svg';
+const skills = [
+  { img: nextjs, name: 'Next.js' },
+  { img: html, name: 'HTML' },
+  { img: css, name: 'CSS' },
+  { img: chakraui, name: 'Chakra UI' },
+  { img: expo, name: 'Expo' },
+  { img: express, name: 'Express' },
+  { img: figma, name: 'Figma' },
+  { img: framer, name: 'Framer' },
+  { img: js, name: 'JavaScript' },
+  { img: mongo, name: 'MongoDB' },
+  { img: node, name: 'Node.js' },
+  { img: postgres, name: 'PostgreSQL' },
+  { img: prisma, name: 'Prisma' },
+  { img: python, name: 'Python' },
+  { img: react, name: 'React' },
+  { img: supabase, name: 'Supabase' },
+  { img: tailwind, name: 'Tailwind CSS' },
+  { img: typescript, name: 'TypeScript' },
+]
+
+const Skill = ({img, name}) => {
+  return (
+    <div className="relative group">
+      <motion.img
+        src={img}
+        className='max-h-20'
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2 }}
+      />
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {name}
+      </div>
+    </div>
+  )
+}
 
 const About = () => {
   return (
     <motion.section
       id="about"
-      className="py-20 bg-gray-800 text-gray-100"
+      className="py-20  text-gray-100"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -70,223 +107,13 @@ const About = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <div className="relative group">
-                <motion.img
-                  src={nextjs}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Next.js
-                </div>
-              </div>
-              {/* Repeat similar blocks for other skills */}
-              <div className="relative group">
-                <motion.img
-                  src={html}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  HTML
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={css}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  CSS
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={chakraui}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Chakra UI
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={expo}
-                  className='h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Expo
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={express}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Express
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={figma}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Figma
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={framer}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Framer
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={js}
-                  className='h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  JavaScript
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={mongo}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  MongoDB
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={node}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Node.js
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={postgres}
-                  className='h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  PostgreSQL
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={prisma}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Prisma
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={python}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Python
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={react}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  React
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={supabase}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Supabase
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={tailwind}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Tailwind CSS
-                </div>
-              </div>
-              <div className="relative group">
-                <motion.img
-                  src={typescript}
-                  className='max-h-20'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 2 }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  TypeScript
-                </div>
-              </div>
+              {
+                skills.map((skill,index) => (
+                  <Skill key={index} img={skill.img} name={skill.name} />
+                ))
+
+              }
+
             </motion.div>
           </div>
         </div>
