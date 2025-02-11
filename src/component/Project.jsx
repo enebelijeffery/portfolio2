@@ -5,7 +5,7 @@ import expensetraker from '../assets/expensetraker.png'
 import ecom from '../assets/ecom.png'
 import { useRef } from 'react';
 
-const ProjectCard = ({ projectName, projectDiscription, projectLink = '#', projectTech, productImage }) => {
+const ProjectCard = ({ projectName, projectDiscription, projectSourceLink = '#', projectLiveDemoLink, projectTech, productImage }) => {
   const ref = useRef(null)
   const isInview = useInView(ref,{once:true})
   return (
@@ -20,14 +20,18 @@ const ProjectCard = ({ projectName, projectDiscription, projectLink = '#', proje
         <h3 className="text-xl font-semibold">{projectName}</h3>
         <p className=" mb-4 text-white">{projectDiscription}</p>
         <h4 className="text-lg font-semibold mb-2">Technologies Used</h4>
-        <ul className='grid grid-cols-3 gap-2'>
+        <ul className='grid grid-cols-3 mb-5 gap-2'>
           {projectTech.map((tech, i) => {
             return (
               <li>{tech}</li>
             )
           })}
         </ul>
-        <a href={projectLink} className="text-teal-500 hover:underline" target='blank'>View Details</a>
+        <div className='flex justify-between'>
+        <a href={projectSourceLink} className="text-teal-500 hover:underline" target='blank'>View Source</a>
+        <a href={projectLiveDemoLink} className={`text-teal-500 ${projectLiveDemoLink?undefined:'hidden'} hover:underline`} target='blank'>live demo</a>
+        </div>
+        
       </div>
     </motion.div>
   )
@@ -38,30 +42,34 @@ const Projects = () => {
     {
       projectName: "Admin Dashboard",
       projectDiscription: "This project is a feature-rich admin dashboard built with React and Material-UI. It provides a clean and intuitive interface for managing various aspects of an application. The dashboard includes multiple scenes and components, each designed to handle specific tasks efficiently.",
-      projectLink: "https://github.com/enebelijeffery/adminPanel",
+      projectSourceLink: "https://github.com/enebelijeffery/adminPanel",
       projectTech: ["React", "Material-UI", "React Router", "Formik & Yup", "Nivo (for charts)", "FullCalendar"],
       productImage: dasboard,
+      projectLiveDemoLink: undefined
     },
     {
       projectName: "Financial-Chatbot",
       projectDiscription: "This project is a comprehensive financial chatbot application with integrated forum functionalities. It consists of a backend server implemented using Node.js and Express, and a frontend application built with React and Material-UI.",
-      projectLink: 'https://github.com/enebelijeffery/f-chatbot-forum',
+      projectSourceLink: 'https://github.com/enebelijeffery/f-chatbot-forum',
       projectTech: ['Node.js', 'express', "PostgreSQL", 'bcrypt', 'JWT', 'OpenAI API', 'React', 'mui', 'react router'],
       productImage: Fchatbot,
+      projectLiveDemoLink: 'https://f-chatbot-frontend.vercel.app/signin'
     },
     {
       projectName: "E-commerce Website",
       projectDiscription: "This project is an e-commerce website built using React. The website features a modern and responsive design, providing a seamless shopping experience for users. It includes various sections such as fashion, electronics, and jewelry, each showcasing different products with detailed information and pricing.",
-      projectLink: 'https://github.com/enebelijeffery/e-com',
+      projectSourceLink: 'https://github.com/enebelijeffery/e-com',
       projectTech: ['React', 'React Router', 'React Bootstrap', 'React Icons'],
-      productImage: ecom
+      productImage: ecom,
+      projectLiveDemoLink: undefined
     },
     {
       projectName: "Project 4",
       projectDiscription: "This project is a personal finance tracker application designed to help users manage their financial records efficiently. The application provides functionalities for users to sign in, add, update, and delete financial records. It features a user-friendly interface for displaying financial data in a tabular format and ensures secure authentication for user accounts.",
-      projectLink: "https://github.com/enebelijeffery/expenseTracker",
+      projectSourceLink: "https://github.com/enebelijeffery/expenseTracker",
       projectTech: ['React', 'vite', 'typescript', 'reac table', 'clerk', 'express', 'mongodb'],
-      productImage: expensetraker
+      productImage: expensetraker,
+      projectLiveDemoLink: undefined
     },
     // {
     //   projectName: "Project 5",
