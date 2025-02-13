@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import dasboard from '../assets/dashboard.png'
 import Fchatbot from '../assets/Fchatbot.png'
+import aiFinance from '../assets/ai-finance.png'
 import expensetraker from '../assets/expensetraker.png'
 import ecom from '../assets/ecom.png'
 import { useRef } from 'react';
@@ -71,13 +72,20 @@ const Projects = () => {
       productImage: expensetraker,
       projectLiveDemoLink: undefined
     },
-    // {
-    //   projectName: "Project 5",
-    //   projectDiscription: "Project 5 Discription",
-    //   projectLink: "#",
-    //   projectTech:[],
-    //   productImage: "https://via.placeholder.com/150"
-    // },
+    {
+      projectName: "ai-saas-finance",
+      projectDiscription: "An AI-powered financial management platform that helps you track, analyze, and optimize your spending with real-time insights.",
+      projectLink: "https://github.com/enebelijeffery/AI-Saas-Finance-Main",
+      projectTech:["Next.JS",
+        "Supabase",
+        "Tailwind",
+        "Prisma",
+        "Inngest",
+        "ArcJet",
+        "Shadcn UI"],
+      productImage: aiFinance,
+      projectLiveDemoLink: 'https://ai-saas-finance-main-ervrtuv6x-enebelijefferys-projects.vercel.app/'
+    },
     // {
     //   projectName: "Project 6",
     //   projectDiscription: "Project 6 Discription",
